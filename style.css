@@ -1532,3 +1532,23 @@ body.requests-fumigating * {
 .requests-final-message[hidden] {
   display: none !important;
 }
+
+/* TESTE: tornar a mão visível */
+#hand-phase .hand-scanner {
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  min-height: 70vh;
+}
+
+#hand-phase .hand-outline {
+  display: block !important;
+  width: 220px !important;
+  height: auto !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  filter: none !important;
+  position: relative;
+  z-index: 20;
+}
+
