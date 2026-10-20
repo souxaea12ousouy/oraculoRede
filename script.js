@@ -1,3 +1,4 @@
+
 /* ==========================================
    ORACULO — SISTEMA PRINCIPAL
    Rede inicial, perfil, consultoria, oráculo,
@@ -7,7 +8,7 @@
   "use strict";
 
   /* CONFIGURAÇÃO */
-  const GOOGLE_MAPS_API_KEY = "AIzaSyALrE7fv3SSlJ95xI7MZMB9Q5eq8FUeB6I";
+  const GOOGLE_MAPS_API_KEY = "COLOCA_A_TUA_CHAVE_RESTRINGIDA_AQUI";
   const TEMPO_REDE = 12500;
   const TEMPO_FRASE = 2600;
   const TEMPO_SCANNER = 12000;
@@ -17,7 +18,7 @@
   const TEMPO_INTERPRETACAO = 4000;
 
   const PROFILE_URL =
-    "https://www.google.com/maps/contrib/108003330993722570596/photos/@41.7815287,-2.9185443,1495m/data=!3m2!1e3!4b1!4m3!8m2!3m1!1e1?entry=ttu&g_ep=EgoyMDI2MTAxNC4wIKXMDSoASAFQAw%3D%3D";
+    "https://www.google.com/maps/contrib/108003330993722570596/photos/@41.7815287,-2.9185443,1495m/data=!3m2!1e3!4b1!4m3!8m2!3m1!1e1?entry=ttu";
 
   const PALETA = [
     [245, 245, 245],
@@ -38,7 +39,6 @@
   const ENTIDADES = [
     {
       id: "porto-fran-gonzalez",
-
       latitude: 41.1377953,
       longitude: -8.61107562,
       heading: 14.63244021,
@@ -49,7 +49,7 @@
         "https://earth.google.com/web/@41.1377953,-8.61107562,16.0699872a,0d,60y,14.63244021h,0.001t,0r/data=CgRCAggCIhsKF0NJSE0wb2dLRUlDQWdJRHFuYmlVaUFFEAUyKQonCiUKITFKMnpTNVBjYXpDODNjNEx0ZFg1V1VUN1pzRlBHNHJuVSABOgMKATBCAggASggI5P2GhAUQAQ",
 
       perfilUrl:
-        "https://www.google.com/maps/contrib/108003330993722570596/photos/@41.7815287,-2.9185443,1495m/data=!3m2!1e3!4b1!4m3!8m2!3m1!1e1?entry=ttu&g_ep=EgoyMDI2MTAxNC4wIKXMDSoASAFQAw%3D%3D",
+        "https://www.google.com/maps/contrib/108003330993722570596/photos/@41.7815287,-2.9185443,1495m/data=!3m2!1e3!4b1!4m3!8m2!3m1!1e1?entry=ttu",
 
       fotoUrl: RAW + "frangonzalex_perfil.png",
 
@@ -87,7 +87,6 @@
 
     {
       id: "trung-nguyen",
-
       latitude: 41.14775852,
       longitude: -8.60992886,
       heading: 209.312295,
@@ -98,7 +97,7 @@
         "https://earth.google.com/web/@41.14775852,-8.60992886,72.69511898a,0d,60y,209.312295h,0.001t,0r/data=CgRCAggCIhoKFkNJSE0wb2dLRUlDQWdJREUxUFBTV0EQBTIpCicKJQohMUoyelM1UGNhekM4M2M0THRkWDVXVVQ3WnNGUEc0cm5VIAE6AwoBMEICCABKCAjk_YaEBRAB",
 
       perfilUrl:
-        "https://www.google.com/maps/contrib/112415029962243514414/photos/@26.7908381,-81.3322905,458007m/data=!3m1!1e3!4m3!8m2!3m1!1e1?entry=ttu&g_ep=EgoyMDI2MTAxNC4wIKXMDSoASAFQAw%3D%3D",
+        "https://www.google.com/maps/contrib/112415029962243514414/photos/@26.7908381,-81.3322905,458007m/data=!3m1!1e3!4m3!8m2!3m1!1e1?entry=ttu",
 
       fotoUrl: RAW + "trungnguyen_perfil.png",
 
@@ -136,7 +135,6 @@
 
     {
       id: "kirill-kuznetsov",
-
       latitude: 41.15750118,
       longitude: -8.60555547,
       heading: 19.02078357,
@@ -147,7 +145,7 @@
         "https://earth.google.com/web/@41.15750118,-8.60555547,142.3084332a,0d,90y,19.02078357h,46.1554382t,0r/data=CgRCAggCIhsKF0NJSE0wb2dLRUlDQWdJQ0VvZkhyaWdFEAUyKQonCiUKITFKMnpTNVBjYXpDODNjNEx0ZFg1V1VUN1pzRlBHNHJuVSABOgMKATBCAggASggI5P2GhAUQAQ",
 
       perfilUrl:
-        "https://www.google.com/maps/contrib/103963947019199521182/photos/@47.2352744,16.2525889,5574045m/data=!3m1!1e3!4m3!8m2!3m1!1e1?entry=ttu&g_ep=EgoyMDI2MTAxNC4wIKXMDSoASAFQAw%3D%3D",
+        "https://www.google.com/maps/contrib/103963947019199521182/photos/@47.2352744,16.2525889,5574045m/data=!3m1!1e3!4m3!8m2!3m1!1e1?entry=ttu",
 
       fotoUrl:
         RAW + "%D0%9A%D0%B8%D1%80%D0%B8%D0%BB%D0%BB%D0%9A%D1%83%D0%B7%D0%BD%D0%B5%D1%86%D0%BE%D0%B2_perfil.png",
@@ -187,7 +185,6 @@
 
     {
       id: "pavel-golovinsky",
-
       latitude: 41.13829422,
       longitude: -8.60747244,
       heading: 87.85517648,
@@ -198,7 +195,7 @@
         "https://earth.google.com/web/@41.13829422,-8.60747244,80.93608152a,0d,60y,87.85517648h,13.57570642t,0r/data=CgRCAggCIhsKF0NJSE0wb2dLRUlDQWdJREVvWld3NWdFEAUyKQonCiUKITFKMnpTNVBjYXpDODNjNEx0ZFg1V1VUN1pzRlBHNHJuVSABOgMKATBCAggASggI5P2GhAUQAQ",
 
       perfilUrl:
-        "https://www.google.com/maps/contrib/104172082461287320500/photos/@30.4004998,-88.0386449,3540310m/data=!3m2!1e3!4b1!4m3!8m2!3m1!1e1?entry=ttu&g_ep=EgoyMDI2MTAxNC4wIKXMDSoASAFQAw%3D%3D",
+        "https://www.google.com/maps/contrib/104172082461287320500/photos/@30.4004998,-88.0386449,3540310m/data=!3m2!1e3!4b1!4m3!8m2!3m1!1e1?entry=ttu",
 
       fotoUrl: RAW + "pavelgolovinsky_perfil.png",
 
@@ -428,6 +425,27 @@
     console.error("ORACULO: não foi possível iniciar os canvas.");
     return;
   }
+
+  /* Criar a mensagem final dos Pedidos sem alterar o HTML. */
+  const requestsFinalMessage = document.createElement("p");
+  requestsFinalMessage.id = "requests-final-message";
+  requestsFinalMessage.className = "requests-final-message";
+  requestsFinalMessage.hidden = true;
+  requestsFinalImage.insertAdjacentElement(
+    "afterend",
+    requestsFinalMessage
+  );
+
+  Object.assign(requestsFinalMessage.style, {
+    color: "#eeeeee",
+    fontFamily: '"Courier New", monospace',
+    fontSize: "14px",
+    lineHeight: "1.7",
+    textAlign: "center",
+    maxWidth: "420px",
+    margin: "22px auto 0",
+    padding: "0 18px"
+  });
 
   /* O overlay passa para o body para a fumaça cobrir a página inteira. */
   document.body.appendChild(requestsSmokeOverlay);
@@ -877,7 +895,10 @@
   function makeStreetViewUrl(entity) {
     const key = GOOGLE_MAPS_API_KEY.trim();
 
-    if (!key || key === "COLOCA_A_TUA_CHAVE_AQUI") {
+    if (
+      !key ||
+      key === "COLOCA_A_TUA_CHAVE_RESTRINGIDA_AQUI"
+    ) {
       return "";
     }
 
@@ -976,14 +997,12 @@
     const entity = activeEntity || ENTIDADES[0];
     const cards = getRequestCards();
 
-    /* As três imagens da entidade são as opções corretas. */
     const correctImages = (entity.imagens || []).map((url, index) => ({
       url,
       correct: true,
       alt: `Imagem ${index + 1} da entidade ${entity.perfil.nome}`
     }));
 
-    /* As restantes imagens funcionam como opções incorretas. */
     const otherImages = ENTIDADES
       .filter((other) => other.id !== entity.id)
       .flatMap((other) =>
@@ -1009,7 +1028,6 @@
       )
     ];
 
-    /* Baralhar as seis opções. */
     for (let i = choices.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1));
 
@@ -1100,33 +1118,26 @@
       profileStats.appendChild(item);
     }
 
+    /* Mostrar sempre as iniciais, nunca a fotografia. */
     const photo = el("profile-photo");
     const photoPlaceholder = el("profile-photo-placeholder");
 
-    photo.onerror = () => {
+    if (photo) {
       photo.hidden = true;
-      photoPlaceholder.hidden = false;
-    };
-
-    photo.onload = () => {
-      photo.hidden = false;
-      photoPlaceholder.hidden = true;
-    };
-
-    if (entity.fotoUrl) {
-      photo.alt = `Foto de perfil de ${profile.nome}`;
-      photo.src = entity.fotoUrl;
-    } else {
       photo.removeAttribute("src");
-      photo.hidden = true;
+      photo.alt = "";
+    }
 
-      photoPlaceholder.textContent = profile.nome
+    if (photoPlaceholder) {
+      const initials = profile.nome
+        .trim()
         .split(/\s+/)
         .slice(0, 2)
-        .map((part) => part[0] || "")
+        .map((part) => Array.from(part)[0] || "")
         .join("")
-        .toUpperCase();
+        .toLocaleUpperCase();
 
+      photoPlaceholder.textContent = initials;
       photoPlaceholder.hidden = false;
     }
 
@@ -1345,6 +1356,12 @@
     consultModeScreen.classList.add("is-active");
     consultModeScreen.setAttribute("aria-hidden", "false");
 
+    const mentalizeText = mentalizePhase.querySelector("p");
+
+    if (mentalizeText) {
+      mentalizeText.textContent = "Mentalize a sua entidade";
+    }
+
     mentalizePhase.hidden = false;
 
     await wait(2200);
@@ -1381,7 +1398,7 @@
         answers[Math.floor(Math.random() * answers.length)];
 
       answerPhase.hidden = false;
-    }, 850);
+    }, 1850);
   }
 
   questionForm.addEventListener("submit", submitYesNoQuestion);
@@ -1424,10 +1441,8 @@
     }
   ];
 
-  const codeSymbols = [
-    "01", "10", "∴", "∵", "x", "y", "π", "φ", "∞",
-    "↗", "?", "0x", "101", "011", "//", "<>", "{}", "∷", "∎"
-  ];
+  /* Apenas dígitos binários na animação do copo. */
+  const codeSymbols = ["0", "1"];
 
   function stopEntropyAnimation() {
     if (entropyAnimationFrame !== null) {
@@ -1436,10 +1451,11 @@
     }
   }
 
-  function showOracleCup() {
+  async function showOracleCup() {
     modeRunId++;
-    stopEntropyAnimation();
+    const thisRun = modeRunId;
 
+    stopEntropyAnimation();
     hideAllConsultStages();
 
     consultoriaScreen.classList.remove("is-active");
@@ -1448,14 +1464,13 @@
     consultModeScreen.classList.add("is-active");
     consultModeScreen.setAttribute("aria-hidden", "false");
 
-    entropyBreathPhase.hidden = false;
-    entropyAnimationPhase.hidden = true;
-
     if (entropyProcessingPhase) {
       entropyProcessingPhase.hidden = true;
     }
 
+    entropyAnimationPhase.hidden = true;
     entropyReadingPhase.hidden = true;
+    entropyBreathPhase.hidden = true;
 
     if (entropyProgressFill) {
       entropyProgressFill.style.width = "0%";
@@ -1465,18 +1480,40 @@
       entropyProgressTrack.setAttribute("aria-valuenow", "0");
     }
 
-    entropyBackButton.hidden = false;
+    const mentalizeText = mentalizePhase.querySelector("p");
+
+    if (mentalizeText) {
+      mentalizeText.textContent = "Mentalize a sua entidade";
+    }
+
+    mentalizePhase.hidden = false;
+    entropyBackButton.hidden = true;
 
     requestsEntityName.textContent =
       activeEntity?.perfil?.nome || ENTIDADES[0].perfil.nome;
+
+    await wait(2200);
+
+    if (thisRun !== modeRunId) return;
+
+    mentalizePhase.hidden = true;
+    entropyBreathPhase.hidden = false;
+    entropyBackButton.hidden = false;
   }
 
   function prepareEntropyAnimation() {
     const bounds = entropyAnimationPhase.getBoundingClientRect();
     const dpr = Math.min(window.devicePixelRatio || 1, 2);
 
-    const w = Math.max(1, bounds.width);
-    const h = Math.max(1, bounds.height);
+    const w = Math.max(
+      1,
+      Math.round(bounds.width || window.innerWidth)
+    );
+
+    const h = Math.max(
+      1,
+      Math.round(bounds.height || window.innerHeight)
+    );
 
     entropyCanvas.width = Math.floor(w * dpr);
     entropyCanvas.height = Math.floor(h * dpr);
@@ -1485,6 +1522,7 @@
     entropyCanvas.style.height = `${h}px`;
 
     entropyCtx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    entropyCtx.clearRect(0, 0, w, h);
 
     const count = 75 + Math.floor(Math.random() * 25);
     const cupX = w / 2;
@@ -1677,24 +1715,29 @@
     entropyAnimationPhase.hidden = false;
     entropyBackButton.hidden = false;
 
-    prepareEntropyAnimation();
-
-    const startTime = performance.now();
-
-    function frame(timestamp) {
+    /* Esperar um frame para o navegador calcular as dimensões. */
+    requestAnimationFrame(() => {
       if (thisRun !== modeRunId) return;
 
-      const progress = drawEntropyFrame(timestamp, startTime);
+      prepareEntropyAnimation();
 
-      if (progress < 1) {
-        entropyAnimationFrame = requestAnimationFrame(frame);
-      } else {
-        entropyAnimationFrame = null;
-        runEntropyLoading(thisRun);
+      const startTime = performance.now();
+
+      function frame(timestamp) {
+        if (thisRun !== modeRunId) return;
+
+        const progress = drawEntropyFrame(timestamp, startTime);
+
+        if (progress < 1) {
+          entropyAnimationFrame = requestAnimationFrame(frame);
+        } else {
+          entropyAnimationFrame = null;
+          runEntropyLoading(thisRun);
+        }
       }
-    }
 
-    entropyAnimationFrame = requestAnimationFrame(frame);
+      entropyAnimationFrame = requestAnimationFrame(frame);
+    });
   }
 
   entropyCupButton.addEventListener("click", startEntropyReading);
@@ -1746,6 +1789,9 @@
     requestsOfferingsStep.hidden = true;
     requestsSmokeStep.hidden = true;
     requestsFinalImage.hidden = true;
+
+    requestsFinalMessage.hidden = true;
+    requestsFinalMessage.textContent = "";
 
     if (requestsSmokeTitle) {
       requestsSmokeTitle.hidden = false;
@@ -1808,6 +1854,8 @@
 
     serviceDetailTitle.hidden = true;
     requestsFinalImage.hidden = true;
+    requestsFinalMessage.hidden = true;
+    requestsFinalMessage.textContent = "";
 
     prepareFinalOfferingImage();
 
@@ -1831,6 +1879,15 @@
       }
 
       requestsFinalImage.hidden = false;
+
+      const entityName =
+        activeEntity?.perfil?.nome || ENTIDADES[0].perfil.nome;
+
+      requestsFinalMessage.textContent =
+        `Oferenda recebida, ${entityName} vai trabalhar para conceder o seu pedido`;
+
+      requestsFinalMessage.hidden = false;
+
       requestsSmokeTimer = null;
     }, 5000);
   }
