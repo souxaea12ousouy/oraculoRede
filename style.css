@@ -75,6 +75,7 @@ button:focus-visible, a:focus-visible, input:focus-visible, textarea:focus-visib
 }
 
 .hand-outline {
+  filter: invert(1);
   position: relative; z-index: 1; display: block; width: auto; height: 100%; max-width: 100%;
   overflow: visible; filter: drop-shadow(0 0 5px rgba(218, 218, 218, .2));
   animation: hand-flicker 3.6s ease-in-out infinite;
