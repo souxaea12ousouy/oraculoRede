@@ -2164,5 +2164,5 @@
   requestAnimationFrame(animateNetwork);
 })();
 
-console.log("ORACULO JS NOVO CARREGADO");
+
 
