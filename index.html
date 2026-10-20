@@ -1,0 +1,256 @@
+
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#000000">
+  <title>ORACULO</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+
+  <!-- REDE INICIAL -->
+  <main id="opening-screen" class="opening-screen">
+    <canvas id="internet-map" aria-hidden="true"></canvas>
+    <div class="vignette" aria-hidden="true"></div>
+    <button id="connect-button" class="connect-button" type="button" aria-hidden="true">
+      Eu quero me conectar à Rede
+    </button>
+  </main>
+
+  <!-- LEITURA DA MÃO -->
+  <main id="reading-screen" class="reading-screen" aria-hidden="true">
+    <section id="hand-instruction-phase" class="reading-phase hand-instruction-phase" aria-hidden="true">
+      <p>coloque a sua mão sobre a tela para leitura</p>
+    </section>
+
+    <section id="hand-phase" class="reading-phase hand-phase" aria-hidden="true">
+      <div class="hand-scanner" aria-hidden="true">
+        <img
+          class="hand-outline hand-emoji"
+          src="https://images.emojiterra.com/google/noto-emoji/unicode-17.0/bw/256px/270b-1f3fb.png"
+          alt="Mão aberta"
+          draggable="false">
+        <div class="scan-beam"></div>
+        <div class="scan-glow"></div>
+      </div>
+    </section>
+
+    <section id="loading-phase" class="reading-phase loading-phase" aria-hidden="true">
+      <div class="loading-content">
+        <p class="loading-label">buscando a sua entidade guia</p>
+        <div id="progress-track" class="progress-track" role="progressbar" aria-label="Buscando a sua entidade guia" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+          <div id="progress-fill" class="progress-fill"></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="found-phase" class="reading-phase found-phase" aria-hidden="true">
+      <p>entidade encontrada.</p>
+    </section>
+  </main>
+
+  <!-- STREET VIEW -->
+  <section id="map-modal" class="map-modal" aria-hidden="true">
+    <div class="map-window" role="dialog" aria-modal="true" aria-label="Local revelado pela entidade">
+      <header class="map-header">
+        <span id="map-location-label"></span>
+        <button id="close-map-button" class="close-map-button" type="button" aria-label="Fechar">×</button>
+      </header>
+      <div class="map-viewport">
+        <iframe id="streetview-frame" title="Google Street View interativo" allowfullscreen loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- PERFIL DA ENTIDADE -->
+  <main id="profile-screen" class="profile-screen" aria-hidden="true">
+    <div class="profile-card">
+      <div class="profile-identity">
+        <div class="profile-avatar">
+          <img id="profile-photo" class="profile-photo" alt="" hidden>
+          <div id="profile-photo-placeholder" class="profile-photo-placeholder" aria-hidden="true">FG</div>
+        </div>
+        <div class="profile-heading">
+          <h1><a id="profile-name-link" href="#" target="_blank" rel="noopener noreferrer">Fran González</a></h1>
+          <p id="profile-points" class="profile-points"></p>
+        </div>
+      </div>
+      <div class="profile-divider"></div>
+      <dl id="profile-stats" class="profile-stats"></dl>
+    </div>
+    <button id="consult-button" class="consult-button" type="button">fale com a sua entidade</button>
+  </main>
+
+  <!-- TRANSIÇÃO -->
+  <div id="transition-overlay" class="transition-overlay" aria-hidden="true">
+    <canvas id="transition-canvas"></canvas>
+  </div>
+
+  <!-- MENU PRINCIPAL -->
+  <main id="services-screen" class="services-screen" aria-hidden="true">
+    <button class="service-action" type="button" data-service="consultoria">consultoria</button>
+    <button class="service-action" type="button" data-service="pedidos">pedidos</button>
+    <button class="service-action" type="button" data-service="assistencia-fisica">assistência física</button>
+  </main>
+
+  <!-- CONSULTORIA: APENAS DOIS BOTÕES -->
+  <main id="consultoria-screen" class="consultoria-screen" aria-hidden="true">
+    <button class="consult-mode-button" type="button" data-consult-mode="sim-nao">sim e não</button>
+    <button class="consult-mode-button" type="button" data-consult-mode="oraculo">oráculo</button>
+    <button id="close-consultoria" class="screen-close" type="button" aria-label="Voltar">×</button>
+  </main>
+
+  <!-- ECRÃS DE CONSULTA -->
+  <main id="consult-mode-screen" class="consult-mode-screen" aria-hidden="true">
+
+    <section id="mentalize-phase" class="mode-stage" hidden>
+      <p>mentalize. conecte-se.</p>
+    </section>
+
+    <section id="question-phase" class="mode-stage question-phase" hidden>
+      <form id="yes-no-form">
+        <textarea id="yes-no-question" maxlength="500" rows="3" placeholder="escreva a sua pergunta" aria-label="Escreva a sua pergunta"></textarea>
+        <button class="send-question-button" type="submit">enviar</button>
+      </form>
+    </section>
+
+    <section id="answer-phase" class="mode-stage answer-phase" hidden>
+      <button id="answer-word" type="button" aria-label="Voltar à consulta">SIM</button>
+    </section>
+
+    <!-- ETAPA DO COPO -->
+    <section id="entropy-breath-phase" class="mode-stage entropy-breath-phase" hidden>
+      <p class="oracle-instruction">lance os elementos</p>
+      <button id="entropy-cup-button" class="entropy-cup-button" type="button" aria-label="Lançar os elementos do copo">
+        <svg viewBox="0 0 120 110" class="oracle-cup-svg" role="img" aria-label="Copo para lançar os elementos">
+          <ellipse cx="60" cy="24" rx="26" ry="6"></ellipse>
+          <path d="M34 24 L39 76 Q60 85 81 76 L86 24"></path>
+          <path d="M39 76 Q60 82 81 76"></path>
+        </svg>
+      </button>
+    </section>
+
+    <!-- ANIMAÇÃO DE ELEMENTOS LANÇADOS -->
+    <section id="entropy-animation-phase" class="mode-stage entropy-animation-phase" hidden>
+      <canvas id="entropy-canvas" aria-hidden="true"></canvas>
+
+      <div id="entropy-animation-cup" class="entropy-animation-cup" aria-hidden="true">
+        <svg viewBox="0 0 120 110" class="oracle-cup-svg">
+          <ellipse cx="60" cy="24" rx="26" ry="6"></ellipse>
+          <path d="M34 24 L39 76 Q60 85 81 76 L86 24"></path>
+          <path d="M39 76 Q60 82 81 76"></path>
+        </svg>
+      </div>
+    </section>
+
+    <!-- INTERPRETAÇÃO E BARRA -->
+    <section id="entropy-processing-phase" class="mode-stage entropy-processing-phase" hidden>
+      <p id="entropy-processing-label">interpretando Fran González</p>
+
+      <div
+        id="entropy-progress-track"
+        class="entropy-progress-track"
+        role="progressbar"
+        aria-label="A interpretar a entidade"
+        aria-valuemin="0"
+        aria-valuemax="100"
+        aria-valuenow="0">
+        <div id="entropy-progress-fill" class="entropy-progress-fill"></div>
+      </div>
+    </section>
+
+    <!-- LEITURA FINAL: SÓ A MENSAGEM -->
+    <section id="entropy-reading-phase" class="mode-stage entropy-reading-phase" hidden>
+      <h1 id="entropy-reading-title"></h1>
+      <p id="entropy-reading-paragraph-one"></p>
+      <p id="entropy-reading-paragraph-two"></p>
+    </section>
+
+    <button id="entropy-back" class="screen-close" type="button" aria-label="Voltar à consultoria" hidden>×</button>
+
+    <section id="other-mode-phase" class="mode-stage other-mode-phase" hidden>
+      <h1 id="other-mode-title"></h1>
+      <button id="back-to-consultoria" class="screen-close" type="button" aria-label="Voltar à consultoria">×</button>
+    </section>
+
+    <!-- PEDIDOS E ASSISTÊNCIA -->
+    <section id="service-detail-phase" class="mode-stage other-mode-phase service-detail-phase" hidden>
+      <h1 id="service-detail-title"></h1>
+      <button id="back-to-services" class="screen-close" type="button" aria-label="Voltar ao menu">×</button>
+
+      <div id="requests-interface" class="requests-interface" hidden>
+        <div class="requests-flow">
+
+          <section id="requests-step-profile" class="requests-step">
+            <button type="button" id="requests-entity-profile-card" class="requests-entity-profile-card" aria-label="Abrir perfil de Fran González no Google Maps">
+              <span>IMAGEM DA ENTIDADE<small>imagem a inserir</small></span>
+            </button>
+            <button type="button" id="requests-follow-order" class="requests-action-button">prosseguir com o pedido</button>
+          </section>
+
+          <section id="requests-step-offerings" class="requests-step" hidden>
+            <p class="requests-lead">cada entidade tem gostos únicos. Construa a oferenda para <span id="requests-entity-name">Fran González</span></p>
+
+            <div id="requests-image-grid" class="requests-image-grid">
+              <button type="button" class="requests-offering-card" data-correct="true"><span>IMAGEM 1<small>inserir imagem</small></span></button>
+              <button type="button" class="requests-offering-card" data-correct="false"><span>IMAGEM 2<small>inserir imagem</small></span></button>
+              <button type="button" class="requests-offering-card" data-correct="true"><span>IMAGEM 3<small>inserir imagem</small></span></button>
+              <button type="button" class="requests-offering-card" data-correct="false"><span>IMAGEM 4<small>inserir imagem</small></span></button>
+              <button type="button" class="requests-offering-card" data-correct="true"><span>IMAGEM 5<small>inserir imagem</small></span></button>
+              <button type="button" class="requests-offering-card" data-correct="false"><span>IMAGEM 6<small>inserir imagem</small></span></button>
+            </div>
+
+            <p id="requests-selection-count" hidden aria-live="polite">0/3 imagens selecionadas</p>
+            <p id="requests-offering-feedback" class="requests-offering-feedback" aria-live="polite"></p>
+          </section>
+
+          <section id="requests-step-smoke" class="requests-step" hidden>
+            <p class="requests-lead">defume o ambiente</p>
+            <div id="requests-final-image-placeholder" class="requests-final-image-placeholder" hidden>IMAGEM FINAL A INSERIR</div>
+          </section>
+        </div>
+
+        <div id="requests-smoke-overlay" hidden aria-hidden="true">
+          <div id="requests-smoke-cloud"></div>
+        </div>
+      </div>
+
+      
+<!-- ASSISTÊNCIA FÍSICA -->
+<div id="assistance-interface" class="assistance-interface" hidden>
+
+  <form id="meeting-form" class="meeting-form">
+    <label for="meeting-date">data</label>
+    <input id="meeting-date" name="date" type="date" required>
+
+    <label for="meeting-time">hora</label>
+    <input id="meeting-time" name="time" type="time" required>
+
+    <label for="meeting-place">local da visita</label>
+    <input
+      id="meeting-place"
+      name="place"
+      type="text"
+      placeholder="morada ou ponto de encontro"
+      required>
+
+    <button class="send-question-button" type="submit">
+      SUBMETER
+    </button>
+  </form>
+
+  <div id="meeting-confirmation" class="meeting-confirmation" hidden>
+    <p id="meeting-confirmation-message"></p>
+    <p>Prepare-se.</p>
+
+    <button
+      id="edit-meeting"
+      class="send-question-button"
+      type="button">
+      Adicionar ao Google Calendar
+    </button>
+  </div>
+</div>
